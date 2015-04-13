@@ -33,9 +33,4 @@ public class CSVParserTest {
 		// assertEquals(p.getInputColumnValues().get(0),"status");
 	}
 
-	@Test
-	public void testParseCSV() throws IOException {
-		CSVParser p = new CSVParser();
-		p.parseCsv("merchantMenuofTest1.csv");
-	}
 }
