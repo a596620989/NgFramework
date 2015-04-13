@@ -13,6 +13,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.dwb.test.framework.Constant;
+
 import au.com.bytecode.opencsv.CSVReader;
 
 public class CSVParser {
@@ -26,21 +28,6 @@ public class CSVParser {
 
 	private String action;
 
-	public void parseCsv(String fileName) throws IOException {
-		InputStream is = new FileInputStream(fileName);
-		InputStreamReader isr = new InputStreamReader(is, "GBK");
-		CSVReader reader = new CSVReader(isr, ',', '\"', 1);
-		List<String[]> result = reader.readAll();
-
-		for (String[] r : result) {
-			System.out.println(r.length);
-			for (String s : r) {
-				System.out.print(s + "##");
-			}
-		}
-
-		reader.close();
-	}
 
 	public void parse(String fileName) throws Exception {
 		FileInputStream fis = new FileInputStream(fileName);
@@ -95,6 +82,13 @@ public class CSVParser {
 									lineArray[i]);
 				}
 			}
+			
+			System.out.println("aaa"+inputValuePerRow.get(Constant.IGNORE_CASE));
+			//去除标志为不执行 的case.
+			if(inputValuePerRow.get(Constant.IGNORE_CASE.toLowerCase())!=null&&inputValuePerRow.get(Constant.IGNORE_CASE.toLowerCase()).equals(Constant.IGNORE_CASE_YES)){
+				continue;
+			}
+			
 			inputColumnValues.add(inputValuePerRow);
 			outputColumnValues.add(outputValuePerRow);
 
