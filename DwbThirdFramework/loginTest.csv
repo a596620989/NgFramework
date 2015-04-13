@@ -1,0 +1,4 @@
+/mobile/v2_0/user!login.do,,,,,,
+description,param,#status,#data.flag,#data.markettel,#data.dwbtel,#data.supname
+基本用例,"{""cid"":""9fcd8f6eeacdad13552ef46891b672b6c0c"",""code"":""S10757"",""company"":""SCH-I879"",""imei"":""A00000459579B6"",""model"":""SCH-I879"",""pversion"":""4.1.2"",""pwd"":""123456"",""version"":""2.0.0""}",1,1,13185061899,4007171717,testtest
+分支用例-逻辑检验 传递的参数imei为非测试的imei需要覆盖对应code(账户)的imei,"{""cid"":""9fcd8f6eeacdad13552ef46891b672b6c0c"",""code"":""S10757"",""company"":""SCH-I879"",""imei"":""A00000459579B6"",""model"":""SCH-I879"",""pversion"":""4.1.2"",""pwd"":""123456"",""version"":""2.0.0""}",1,1,13185061899,4007171717,testtest

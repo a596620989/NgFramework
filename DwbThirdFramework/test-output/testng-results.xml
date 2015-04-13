@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="7" total="12" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="388" started-at="2015-04-10T12:40:53Z" finished-at="2015-04-10T12:40:53Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="388" started-at="2015-04-10T12:40:53Z" finished-at="2015-04-10T12:40:53Z">
+      <class name="com.dwb.third.api.test.cases.AGetTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.dwb.third.api.test.cases.AGetTest@57829d67]" name="setUp" is-config="true" duration-ms="11" started-at="2015-04-10T20:40:53Z" finished-at="2015-04-10T20:40:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="execute(java.lang.String, int)[pri:0, instance:com.dwb.third.api.test.cases.AGetTest@57829d67]" name="execute" duration-ms="110" started-at="2015-04-10T20:40:53Z" data-provider="csvRowProvider" finished-at="2015-04-10T20:40:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{sign=eval(util.SignUtil.sign("&ts=${ts}&menu_id=${menu_id}")), description=分析用例-逻辑校验-菜单id(menu_id)不存在, pk=43541693, secret=7b75d017582cfb9f481543f3efd142a9, key=22, menu_id=9900099, ts=eval(new Date().getTime().toString())}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [签名无效] but found [menu_id不存在?]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [签名无效] but found [menu_id不存在?]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at com.dwb.thirdApi.test.framework.Http.assertResult(Http.java:30)
+	at com.dwb.thirdApi.test.framework.Get.processRow(Get.java:67)
+	at com.dwb.thirdApi.test.framework.ExecuteEngine.execute(ExecuteEngine.java:32)
+	at com.dwb.third.api.test.cases.AGetTest.execute(AGetTest.java:11)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- execute -->
+        <test-method status="FAIL" signature="execute(java.lang.String, int)[pri:0, instance:com.dwb.third.api.test.cases.AGetTest@57829d67]" name="execute" duration-ms="24" started-at="2015-04-10T20:40:53Z" data-provider="csvRowProvider" finished-at="2015-04-10T20:40:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{sign=eval(util.SignUtil.sign("&ts=${ts}&menu_id=${menu_id}")), description=分析用例-逻辑校验-menu_id下菜品不可用, pk=43541693, secret=7b75d017582cfb9f481543f3efd142a9, key=333, menu_id=101003, ts=eval(new Date().getTime().toString())}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [签名无效] but found [成功]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [签名无效] but found [成功]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at com.dwb.thirdApi.test.framework.Http.assertResult(Http.java:30)
+	at com.dwb.thirdApi.test.framework.Get.processRow(Get.java:67)
+	at com.dwb.thirdApi.test.framework.ExecuteEngine.execute(ExecuteEngine.java:32)
+	at com.dwb.third.api.test.cases.AGetTest.execute(AGetTest.java:11)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- execute -->
+        <test-method status="FAIL" signature="execute(java.lang.String, int)[pri:0, instance:com.dwb.third.api.test.cases.AGetTest@57829d67]" name="execute" duration-ms="21" started-at="2015-04-10T20:40:53Z" data-provider="csvRowProvider" finished-at="2015-04-10T20:40:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{sign=eval(util.SignUtil.sign("&ts=${ts}&menu_id=${menu_id}")), description=分析用例-逻辑校验-menu_id下菜品未卖完（菜品可用）, pk=43541693, secret=7b75d017582cfb9f481543f3efd142a9, key=333, menu_id=101004, ts=eval(new Date().getTime().toString())}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [签名无效] but found [成功]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [签名无效] but found [成功]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at com.dwb.thirdApi.test.framework.Http.assertResult(Http.java:30)
+	at com.dwb.thirdApi.test.framework.Get.processRow(Get.java:67)
+	at com.dwb.thirdApi.test.framework.ExecuteEngine.execute(ExecuteEngine.java:32)
+	at com.dwb.third.api.test.cases.AGetTest.execute(AGetTest.java:11)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- execute -->
+        <test-method status="PASS" signature="execute(java.lang.String, int)[pri:0, instance:com.dwb.third.api.test.cases.AGetTest@57829d67]" name="execute" duration-ms="24" started-at="2015-04-10T20:40:53Z" data-provider="csvRowProvider" finished-at="2015-04-10T20:40:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{sign=eval(util.SignUtil.sign("&ts=${ts}&menu_id=${menu_id}")), description=分析用例-逻辑校验-签名无效（参数未作字典升序排序）, pk=43541693, secret=7b75d017582cfb9f481543f3efd142a9, key=44, menu_id=101002, ts=eval(new Date().getTime().toString())}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- execute -->
+        <test-method status="PASS" signature="execute(java.lang.String, int)[pri:0, instance:com.dwb.third.api.test.cases.AGetTest@57829d67]" name="execute" duration-ms="21" started-at="2015-04-10T20:40:53Z" data-provider="csvRowProvider" finished-at="2015-04-10T20:40:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{sign=eval(util.SignUtil.sign("&ts=${ts}&menu_id=${menu_id}")), description=分析用例-逻辑校验-签名无效（签名menu_id参数和url的menu_id参数不一致）, pk=43541693, secret=7b75d017582cfb9f481543f3efd142a9, key=55, menu_id=101002, ts=eval(new Date().getTime().toString())}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- execute -->
+        <test-method status="FAIL" signature="execute(java.lang.String, int)[pri:0, instance:com.dwb.third.api.test.cases.AGetTest@57829d67]" name="execute" duration-ms="22" started-at="2015-04-10T20:40:53Z" data-provider="csvRowProvider" finished-at="2015-04-10T20:40:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{sign=eval(util.SignUtil.sign("&ts=${ts}&menu_id=${menu_id}")), description=分析用例-逻辑校验-pk参数不存在, pk=43541693, secret=7b75d017582cfb9f481543f3efd142a9, key=66, menu_id=101002, ts=eval(new Date().getTime().toString())}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [签名无效] but found [partner key 无效]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [签名无效] but found [partner key 无效]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at com.dwb.thirdApi.test.framework.Http.assertResult(Http.java:30)
+	at com.dwb.thirdApi.test.framework.Get.processRow(Get.java:67)
+	at com.dwb.thirdApi.test.framework.ExecuteEngine.execute(ExecuteEngine.java:32)
+	at com.dwb.third.api.test.cases.AGetTest.execute(AGetTest.java:11)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- execute -->
+        <test-method status="PASS" signature="execute(java.lang.String, int)[pri:0, instance:com.dwb.third.api.test.cases.AGetTest@57829d67]" name="execute" duration-ms="23" started-at="2015-04-10T20:40:53Z" data-provider="csvRowProvider" finished-at="2015-04-10T20:40:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{sign=eval(util.SignUtil.sign("&ts=${ts}&menu_id=${menu_id}")), description=分析用例-逻辑校验-签名无效（签名pk参数和url的pk参数不一致）, pk=43541693, secret=7b75d017582cfb9f481543f3efd142a9, key=77, menu_id=101002, ts=eval(new Date().getTime().toString())}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- execute -->
+        <test-method status="PASS" signature="execute(java.lang.String, int)[pri:0, instance:com.dwb.third.api.test.cases.AGetTest@57829d67]" name="execute" duration-ms="22" started-at="2015-04-10T20:40:53Z" data-provider="csvRowProvider" finished-at="2015-04-10T20:40:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{sign=eval(util.SignUtil.sign("&ts=${ts}&menu_id=${menu_id}")), description=分析用例-逻辑校验-签名无效（签名ts参数和url的ts参数不一致）, pk=43541693, secret=7b75d017582cfb9f481543f3efd142a9, key=88, menu_id=101002, ts=eval(new Date().getTime().toString())}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- execute -->
+        <test-method status="FAIL" signature="execute(java.lang.String, int)[pri:0, instance:com.dwb.third.api.test.cases.AGetTest@57829d67]" name="execute" duration-ms="20" started-at="2015-04-10T20:40:53Z" data-provider="csvRowProvider" finished-at="2015-04-10T20:40:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{sign=eval(util.SignUtil.sign("&ts=${ts}&menu_id=${menu_id}")), description=分支用例-参数校验-菜单id(menu_id)参数缺失, pk=43541693, secret=7b75d017582cfb9f481543f3efd142a9, key=99, menu_id=, ts=eval(new Date().getTime().toString())}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [签名无效] but found [menu_id参数缺失]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [签名无效] but found [menu_id参数缺失]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at com.dwb.thirdApi.test.framework.Http.assertResult(Http.java:30)
+	at com.dwb.thirdApi.test.framework.Get.processRow(Get.java:67)
+	at com.dwb.thirdApi.test.framework.ExecuteEngine.execute(ExecuteEngine.java:32)
+	at com.dwb.third.api.test.cases.AGetTest.execute(AGetTest.java:11)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- execute -->
+        <test-method status="FAIL" signature="execute(java.lang.String, int)[pri:0, instance:com.dwb.third.api.test.cases.AGetTest@57829d67]" name="execute" duration-ms="20" started-at="2015-04-10T20:40:53Z" data-provider="csvRowProvider" finished-at="2015-04-10T20:40:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{sign=eval(util.SignUtil.sign("&ts=${ts}&menu_id=${menu_id}")), description=分支用例-参数校验-ts参数缺失, pk=43541693, secret=7b75d017582cfb9f481543f3efd142a9, key=100, menu_id=101002, ts=eval(new Date().getTime().toString())}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[9]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [签名无效] but found [ts参数缺失]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [签名无效] but found [ts参数缺失]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at com.dwb.thirdApi.test.framework.Http.assertResult(Http.java:30)
+	at com.dwb.thirdApi.test.framework.Get.processRow(Get.java:67)
+	at com.dwb.thirdApi.test.framework.ExecuteEngine.execute(ExecuteEngine.java:32)
+	at com.dwb.third.api.test.cases.AGetTest.execute(AGetTest.java:11)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- execute -->
+        <test-method status="PASS" signature="execute(java.lang.String, int)[pri:0, instance:com.dwb.third.api.test.cases.AGetTest@57829d67]" name="execute" duration-ms="22" started-at="2015-04-10T20:40:53Z" data-provider="csvRowProvider" finished-at="2015-04-10T20:40:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{sign=eval(util.SignUtil.sign("&ts=${ts}&menu_id=${menu_id}")), description=分支用例-参数校验-pk参数缺失, pk=, secret=7b75d017582cfb9f481543f3efd142a9, key=111, menu_id=101002, ts=eval(new Date().getTime().toString())}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- execute -->
+        <test-method status="FAIL" signature="execute(java.lang.String, int)[pri:0, instance:com.dwb.third.api.test.cases.AGetTest@57829d67]" name="execute" duration-ms="19" started-at="2015-04-10T20:40:53Z" data-provider="csvRowProvider" finished-at="2015-04-10T20:40:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{sign=eval(util.SignUtil.sign("&ts=${ts}&menu_id=${menu_id}")), description=分支用例-参数校验-sign参数缺失, pk=43541693, secret=, key=122, menu_id=101002, ts=eval(new Date().getTime().toString())}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[11]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [签名无效] but found [sign参数缺失]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [签名无效] but found [sign参数缺失]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at com.dwb.thirdApi.test.framework.Http.assertResult(Http.java:30)
+	at com.dwb.thirdApi.test.framework.Get.processRow(Get.java:67)
+	at com.dwb.thirdApi.test.framework.ExecuteEngine.execute(ExecuteEngine.java:32)
+	at com.dwb.third.api.test.cases.AGetTest.execute(AGetTest.java:11)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- execute -->
+      </class> <!-- com.dwb.third.api.test.cases.AGetTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
