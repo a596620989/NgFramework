@@ -51,6 +51,8 @@ public class Get extends Http {
 				String eval = JavaInterpreter.evalRecursively(value);
 				if(eval!=null){
 					value = eval;
+					//用eval的值覆盖已有的eval表达式
+					currentCaseInput.put(inputColumn, value);
 				}
 			}
 			
