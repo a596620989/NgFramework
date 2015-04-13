@@ -27,7 +27,7 @@ public abstract class Http {
 				// 更友好的提示
 				jsonValue = "路径不存在:" + e.getKey();
 			}
-			Assert.assertEquals(e.getValue().toString(), jsonValue);
+			Assert.assertEquals(jsonValue,e.getValue().toString());
 		}
 	}
 

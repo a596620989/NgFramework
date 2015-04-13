@@ -4,7 +4,10 @@ public class SignUtil {
 	
 	public static String sign(String input){
 		
-		return "nimei";
+		System.out.println("input is ::"+input);
+		String sign = Signature.getSignature(input, "");
+		
+		return sign;
 		
 	}
 

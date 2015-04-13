@@ -6,10 +6,15 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.log4j.Logger;
+
+import com.dwb.test.framework.ExecuteEngine;
+
 public class JSTLParser {
 	
 	//非贪婪模式匹配
 	private static final String PATTERN = "\\$\\{(.*?)\\}";
+	private static Logger logger = Logger.getLogger(ExecuteEngine.class);
 
 	/**
 	 * 获取所有需要被解析的参数列表.
@@ -25,7 +30,7 @@ public class JSTLParser {
 
 		while (m.find()) {
 			result.add( m.group(1) );
-			System.out.println(result);
+			logger.debug(result);
 		}
 		
 		return result;

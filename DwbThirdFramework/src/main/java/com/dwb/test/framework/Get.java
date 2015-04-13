@@ -26,15 +26,21 @@ public class Get extends Http {
 
 			String inputColumn = parser.getInputColumnName().get(i);
 
+			//忽略description
 			if (inputColumn.equals("description")) {
 				continue;
 			}
+			
+			String value = currentCaseInput.get(inputColumn);
 
+			//忽略当前行中值为null的列
+			if("null".equalsIgnoreCase(value)){
+				continue;
+			}
+			
 			url += "&";
 			url += inputColumn;
 			url += "=";
-
-			String value = currentCaseInput.get(inputColumn);
 			
 			//eval, 不用patter match,而先用前缀判断, 为了提高性能.
 			if(value.startsWith("eval")){

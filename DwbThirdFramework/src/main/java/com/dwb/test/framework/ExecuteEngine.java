@@ -1,6 +1,9 @@
 package com.dwb.test.framework;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.apache.log4j.Logger;
 import org.testng.annotations.DataProvider;
@@ -28,7 +31,7 @@ public abstract class ExecuteEngine extends TestBase {
 		Map<String, String> currentCaseOutput = parser.getOutputColumnValues()
 				.get(i);
 
-		logger.info("请求的类型为:" + getRequestType());
+		logger.debug("请求的类型为:" + getRequestType());
 		HttpFactory.getInstance(getRequestType()).processRow(parser,
 				currentCaseInput, currentCaseOutput);
 
@@ -42,7 +45,7 @@ public abstract class ExecuteEngine extends TestBase {
 	public Object[][] createData() {
 
 		try {
-			parser.parse(getCsvFile());
+			parser.parse("src/test/resources/" + getCsvFile());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -53,11 +56,38 @@ public abstract class ExecuteEngine extends TestBase {
 
 		for (int i = 0; i < caseNumber; i++) {
 			//显示在testNg上的描述.
-			String value = parser.getInputColumnValues().get(i).toString();
+			String value = virsual(parser.getInputColumnValues().get(i),parser.getOutputColumnValues().get(i));
 			result[i] = new Object[] {value, i };
 		}
 
 		return result;
+	}
+	
+	private String virsual(HashMap<String, String> inputColumnValues, HashMap<String, String> outputColumnValues){
+		
+		StringBuffer sb = new StringBuffer();
+		
+		for(Entry<String,String> e : inputColumnValues.entrySet()){
+			
+			//不显示eval表达式,eval表达式是动态生成的, 用户不需要关心.
+			if(e.getValue().startsWith("eval(")){
+				continue;
+			}
+			
+			sb.append(e.getKey());
+			sb.append("=");
+			sb.append(e.getValue());
+			sb.append(",");
+		}
+		
+		for(Entry<String,String> e : outputColumnValues.entrySet()){
+			sb.append("#" + e.getKey());
+			sb.append("=");
+			sb.append(e.getValue());
+			sb.append(",");
+		}
+		
+		return sb.toString();
 	}
 
 }

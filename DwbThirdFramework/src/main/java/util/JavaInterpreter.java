@@ -34,7 +34,7 @@ public class JavaInterpreter {
 
 	public static String evalRecursively(String expression)  {
 
-		logger.info("初始表达式:" + expression);
+		logger.debug("初始表达式:" + expression);
 		// 总表达式, 每次迭代都会被规约一次eval
 		String result = expression;
 		Interpreter interpreter = new Interpreter();
@@ -52,12 +52,12 @@ public class JavaInterpreter {
 				lastNotNull = foundMatch;
 			}
 			
-			logger.info("规约:" + lastNotNull);
+			logger.debug("规约:" + lastNotNull);
 			try {
 				result = result.replace("eval(" + lastNotNull + ")",
 						String.valueOf(interpreter.eval(lastNotNull)));
 			} catch (EvalError e) {
-				logger.info("规约失败");
+				logger.debug("规约失败");
 				e.printStackTrace();
 			}
 			

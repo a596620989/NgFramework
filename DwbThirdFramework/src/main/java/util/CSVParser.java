@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -20,8 +21,8 @@ public class CSVParser {
 
 	private List<String> inputColumnName = new ArrayList<String>();
 	private List<String> outputColumnName = new ArrayList<String>();
-	private List<HashMap<String, String>> inputColumnValues = new ArrayList<HashMap<String, String>>();
-	private List<HashMap<String, String>> outputColumnValues = new ArrayList<HashMap<String, String>>();
+	private List<LinkedHashMap<String, String>> inputColumnValues = new ArrayList<LinkedHashMap<String, String>>();
+	private List<LinkedHashMap<String, String>> outputColumnValues = new ArrayList<LinkedHashMap<String, String>>();
 
 	private String action;
 
@@ -55,7 +56,7 @@ public class CSVParser {
 		if ((line = br.readLine()) != null) {
 			this.action = line;
 			action = action.replaceAll(",", "");
-			logger.info("action:" + action);
+			logger.debug("action:" + action);
 		}
 
 		// parser table header.
@@ -77,14 +78,14 @@ public class CSVParser {
 					inputColumnName.add(s);
 				}
 			}
-			logger.info(inputColumnName + "" + outputColumnName);
+			logger.debug(inputColumnName + "" + outputColumnName);
 		}
 
 		CSVReader reader = new CSVReader(br, ',', '\"', 0);
 		while ((lineArray = reader.readNext()) != null) {
 
-			HashMap<String, String> inputValuePerRow = new HashMap<String, String>();
-			HashMap<String, String> outputValuePerRow = new HashMap<String, String>();
+			LinkedHashMap<String, String> inputValuePerRow = new LinkedHashMap<String, String>();
+			LinkedHashMap<String, String> outputValuePerRow = new LinkedHashMap<String, String>();
 			for (int i = 0; i < lineArray.length; i++) {
 				if (i < outputIndex) {
 					inputValuePerRow.put(inputColumnName.get(i), lineArray[i]);
@@ -97,7 +98,7 @@ public class CSVParser {
 			inputColumnValues.add(inputValuePerRow);
 			outputColumnValues.add(outputValuePerRow);
 
-			logger.info(inputValuePerRow + "" + outputValuePerRow
+			logger.debug(inputValuePerRow + "" + outputValuePerRow
 					+ (inputValuePerRow.size() + outputValuePerRow.size()));
 		}
 
@@ -134,21 +135,21 @@ public class CSVParser {
 		this.outputColumnName = outputColumnName;
 	}
 
-	public List<HashMap<String, String>> getInputColumnValues() {
+	public List<LinkedHashMap<String, String>> getInputColumnValues() {
 		return inputColumnValues;
 	}
 
 	public void setInputColumnValues(
-			List<HashMap<String, String>> inputColumnValues) {
+			List<LinkedHashMap<String, String>> inputColumnValues) {
 		this.inputColumnValues = inputColumnValues;
 	}
 
-	public List<HashMap<String, String>> getOutputColumnValues() {
+	public List<LinkedHashMap<String, String>> getOutputColumnValues() {
 		return outputColumnValues;
 	}
 
 	public void setOutputColumnValues(
-			List<HashMap<String, String>> outputColumnValues) {
+			List<LinkedHashMap<String, String>> outputColumnValues) {
 		this.outputColumnValues = outputColumnValues;
 	}
 
