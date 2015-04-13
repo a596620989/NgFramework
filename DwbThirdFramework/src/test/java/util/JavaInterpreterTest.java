@@ -1,6 +1,7 @@
 package util;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Date;
@@ -38,9 +39,10 @@ public class JavaInterpreterTest {
 		//用户类型
 		JavaInterpreter.evalRecursively("eval(new util.JsonParser())");
 		
-		assertEquals("nimei",JavaInterpreter.evalRecursively("eval(util.SignUtil.sign(\"aa\"))"));
-		assertEquals("nimei",JavaInterpreter.evalRecursively("eval(util.SignUtil.sign(\"&menu_id=101002\"))"));
-		assertEquals("nimei",JavaInterpreter.evalRecursively("eval(util.SignUtil.sign(\"&ts=eval(new Date().getTime().toString())&menu_id=101002\"))"));
+		assertEquals("4124BC0A9335C27F086F24BA207A4912",JavaInterpreter.evalRecursively("eval(util.SignUtil.sign(\"aa\"))"));
+		assertEquals("D064F8858FE4E69115ACD386E33D0209",JavaInterpreter.evalRecursively("eval(util.SignUtil.sign(\"&menu_id=101002\"))"));
+		//时间戳每次都会变, 故无法assert
+		assertNotSame("nimei",JavaInterpreter.evalRecursively("eval(util.SignUtil.sign(\"&ts=eval(new Date().getTime().toString())&menu_id=101002\"))"));
 		
 		assertEquals("6",JavaInterpreter.evalRecursively("eval(1+eval(2+3))"));
 		
