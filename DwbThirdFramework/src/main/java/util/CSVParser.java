@@ -2,21 +2,25 @@ package util;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import com.dwb.test.framework.Constant;
-
 import au.com.bytecode.opencsv.CSVReader;
 
+import com.dwb.test.framework.Constant;
+
+/**
+ * csv文件解析器.
+ * 把csv文件中的每行解析成一个hashMap<columnName,columnValue>, 其中columnName又可以分为输入列和输出列.
+ * csv文件需遵循一定的规约.
+ * @author Administrator
+ *
+ */
 public class CSVParser {
 
 	private Logger logger = Logger.getLogger(CSVParser.class);

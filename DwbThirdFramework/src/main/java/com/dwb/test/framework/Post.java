@@ -8,7 +8,9 @@ import org.apache.log4j.Logger;
 import util.CSVParser;
 
 /**
- * TODO:post是否也需要加入eval?
+ * 根据csv文件中的行, 发送http post请求.
+ * 通常post body只有一列
+ * TODO:post是否也需要加入eval? -> 当前不需要
  * @author Administrator
  *
  */

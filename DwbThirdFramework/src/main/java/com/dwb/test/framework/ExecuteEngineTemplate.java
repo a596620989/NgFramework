@@ -1,7 +1,6 @@
 package com.dwb.test.framework;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -12,16 +11,19 @@ import org.testng.annotations.Test;
 import util.CSVParser;
 
 /**
+ * 框架执行模版.
+ * 主要完成以下功能:
+ * 1.解析csv文件
+ * 2.构建API请求实例(可以是http或者任意其他扩展)
+ * 3.调用API请求实例逐行处理请求
  * TODO: 使用注解来保存文件名, get/post, host等信息.
- * TODO: 优化testNg的调用显示. 使得eval可以被动态替换成相应的值
  * @author Administrator
- *
  */
-public abstract class ExecuteEngine extends TestBase {
+public abstract class ExecuteEngineTemplate extends TestBase {
 
 	CSVParser parser = new CSVParser();
 
-	private Logger logger = Logger.getLogger(ExecuteEngine.class);
+	private Logger logger = Logger.getLogger(ExecuteEngineTemplate.class);
 
 	@Test(dataProvider = "csvRowProvider")
 	public void execute(String descption, int i) throws Exception {

@@ -4,10 +4,14 @@ import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.dwb.test.framework.ExecuteEngine;
 import com.jayway.jsonpath.InvalidPathException;
 import com.jayway.jsonpath.JsonPath;
 
+/**
+ * 测试用文件, 可删除
+ * @author Administrator
+ *
+ */
 public class JsonParser {
 
 	static String fileName = "1.json";

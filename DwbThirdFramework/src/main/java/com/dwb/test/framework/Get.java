@@ -11,6 +11,12 @@ import util.HttpUtil;
 import util.JSTLParser;
 import util.JavaInterpreter;
 
+/**
+ * 根据csv文件中的行,发送http get请求.
+ * 根据csv中每行构建一个请求url, 并执行.
+ * @author Administrator
+ *
+ */
 public class Get extends Http {
 
 	private Logger logger = Logger.getLogger(Post.class);

@@ -8,13 +8,19 @@ import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 
-import com.dwb.test.framework.ExecuteEngine;
+import com.dwb.test.framework.ExecuteEngineTemplate;
 
+/**
+ * 解析并替换${}中的内容.
+ * ${columnName}代表当前行中,列明为cloumn的值.
+ * @author Administrator
+ *
+ */
 public class JSTLParser {
 	
 	//非贪婪模式匹配
 	private static final String PATTERN = "\\$\\{(.*?)\\}";
-	private static Logger logger = Logger.getLogger(ExecuteEngine.class);
+	private static Logger logger = Logger.getLogger(ExecuteEngineTemplate.class);
 
 	/**
 	 * 获取所有需要被解析的参数列表.
