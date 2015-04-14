@@ -83,7 +83,6 @@ public class CSVParser {
 				}
 			}
 			
-			System.out.println("aaa"+inputValuePerRow.get(Constant.IGNORE_CASE));
 			//去除标志为不执行 的case.
 			if(inputValuePerRow.get(Constant.IGNORE_CASE.toLowerCase())!=null&&inputValuePerRow.get(Constant.IGNORE_CASE.toLowerCase()).equals(Constant.IGNORE_CASE_YES)){
 				continue;
