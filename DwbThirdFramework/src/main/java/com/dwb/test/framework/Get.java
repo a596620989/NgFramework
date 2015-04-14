@@ -1,6 +1,7 @@
 package com.dwb.test.framework;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
@@ -13,6 +14,8 @@ import util.JavaInterpreter;
 public class Get extends Http {
 
 	private Logger logger = Logger.getLogger(Post.class);
+	
+	static final String[] IGNORE_COLUMNS = {"description",Constant.IGNORE_CASE};
 
 	public void processRow(CSVParser parser,
 			Map<String, String> currentCaseInput,
@@ -26,8 +29,8 @@ public class Get extends Http {
 
 			String inputColumn = parser.getInputColumnName().get(i);
 
-			//忽略description
-			if (inputColumn.equals("description")) {
+			//忽略一些特殊的列
+			if (Arrays.asList(IGNORE_COLUMNS).contains(inputColumn)) {
 				continue;
 			}
 			
